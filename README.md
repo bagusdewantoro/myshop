@@ -87,7 +87,7 @@ heroku login -i
 pip freeze > requirements.txt
 
 * Create heroku app
-heroku create bagusdjangoshop
+heroku create bagusshop
 
 * Open https://bagusshop.herokuapp.com/ in your browser
 * Push local repo to heroku
@@ -96,7 +96,7 @@ git commit -am 'update'
 git push heroku master
 
 * Create proclife file (no extention). Put this text inside
-web: gunicorn myshop.wsgi
+web: gunicorn myshop.wsgi --log-file -
 
 * Edit settings.py
 DEBUG = False
