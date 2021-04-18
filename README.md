@@ -79,11 +79,40 @@ git pull origin master
 * Install HEROKU
 * Install gunicorn
 pip install gunicorn
+
 * Login to heroku using powershell or cmd
 heroku login -i
+
 * Freeze requirements
 pip freeze > requirements.txt
+
 * Create heroku app
 heroku create bagusdjangoshop
+
 * Open https://bagusshop.herokuapp.com/ in your browser
 * Push local repo to heroku
+git add .
+git commit -am 'update'
+git push heroku master
+
+* Create proclife file (no extention). Put this text inside
+web: gunicorn myshop.wsgi
+
+* Edit settings.py
+DEBUG = False
+...
+ALLOWED_HOSTS = ['https://bagusshop.herokuapp.com/']
+
+* Get new secret key from python shell, then copy paste to environment variables
+python
+import secrets
+secrets.token_hex(24)
+
+* Add to environment variables, edit settings.py
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+* Add configuration to heroku
+heroku config:set SECRET_KEY="paste new generated key here"
+heroku config:set AWS_ACCESS_KEY_ID="paste access key here"
+heroku config:set AWS_SECRET_ACCESS_KEY="paste secret key here"
+heroku config:set AWS_STORAGE_BUCKET_NAME_SHOP="paste bucket name here"
