@@ -4,22 +4,22 @@ AWS S3
 * Create Bucket (ignore all of the options)
 * Permission --> CORS --> edit and paste JSON code below
 
-    [
-    {
-        "AllowedHeaders": [
-            "*"
-        ],
-        "AllowedMethods": [
-            "GET",
-            "POST",
-            "PUT"
-        ],
-        "AllowedOrigins": [
-            "*"
-        ],
-        "ExposeHeaders": []
-    }
-    ]
+        [
+        {
+            "AllowedHeaders": [
+                "*"
+            ],
+            "AllowedMethods": [
+                "GET",
+                "POST",
+                "PUT"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+        ]
 
 
 * If you don't have existing IAM, search IAM --> Users --> Add user
