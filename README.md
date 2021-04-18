@@ -1,7 +1,7 @@
 AWS S3
-- AWS Management Console
-- Search: Storage S3
-- Create Bucket (ignore all of the options)
+AWS Management Console
+Search: Storage S3
+Create Bucket (ignore all of the options)
 Permission --> CORS --> edit and paste JSON code below
 
     [
