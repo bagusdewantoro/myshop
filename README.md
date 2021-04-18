@@ -2,8 +2,7 @@ AWS S3
 - AWS Management Console
 - Search: Storage S3
 - Create Bucket (ignore all of the options)
-- Permission --> CORS --> edit and paste JSON code below
-</br>
+- Permission --> CORS --> edit and paste JSON code below</br>
 
     [
     {
@@ -28,8 +27,7 @@ AWS S3
 - Set permissions, choose 'Attach existing policies directly'
 - Choose AmazonS3FullAccess --> no need to Add Tags --> Create User
 - Check/download csv for Access Key ID & Secret Access Key
-- Open Environment Variables from cmd
-</br>
+- Open Environment Variables from cmd</br>
 
     rundll32.exe sysdm.cpl,EditEnvironmentVariables
 
