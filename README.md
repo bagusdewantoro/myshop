@@ -128,4 +128,7 @@ django_heroku.settings(locals())
 * update requirements.txt
 pip freeze > requirements.txt
 
+* heroku migrations
+heroku run python manage.py migrate
+
 * Commit repo and push it to heroku
