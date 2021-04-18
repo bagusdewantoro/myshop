@@ -99,7 +99,6 @@ git push heroku master
 
 * Create Procfile file (no extention). Put this text inside
 web: gunicorn myshop.wsgi --log-file -
-* I first accidently called the file ProcFile instead of Procfile. Simply renaming that file did not get picked up by git. I had to do a git rm ProcFile -f first and then add a new (correctly named) Procfile. After that, it got pushed correctly by git and got picked up correctly by Heroku.
 
 * Edit settings.py
 DEBUG = False
@@ -135,3 +134,9 @@ pip freeze > requirements.txt
 heroku run python manage.py migrate
 
 * Commit repo and push it to heroku
+* Run bash, create super user, etc
+heroku run bash
+ls
+python manage.py createsuperuser
+
+exit
