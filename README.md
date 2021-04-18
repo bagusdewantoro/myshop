@@ -111,8 +111,21 @@ secrets.token_hex(24)
 * Add to environment variables, edit settings.py
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-* Add configuration to heroku
+* Add configuration to heroku through shell
 heroku config:set SECRET_KEY="paste new generated key here"
 heroku config:set AWS_ACCESS_KEY_ID="paste access key here"
 heroku config:set AWS_SECRET_ACCESS_KEY="paste secret key here"
 heroku config:set AWS_STORAGE_BUCKET_NAME_SHOP="paste bucket name here"
+
+heroku addons:create heroku-postgresql:hobby-dev
+pip install django-heroku
+
+* In settings.py
+import django_heroku
+
+django_heroku.settings(locals())
+
+* update requirements.txt
+pip freeze > requirements.txt
+
+* Commit repo and push it to heroku
