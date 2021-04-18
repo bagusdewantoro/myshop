@@ -1,8 +1,8 @@
 AWS S3
-- AWS Management Console
-- Search: Storage S3
-- Create Bucket (ignore all of the options)
-- Permission --> CORS --> edit and paste JSON code below</br>
+* AWS Management Console
+* Search: Storage S3
+* Create Bucket (ignore all of the options)
+* Permission --> CORS --> edit and paste JSON code below
 
     [
     {
@@ -22,17 +22,16 @@ AWS S3
     ]
 
 
-- If you don't have existing IAM, search IAM --> Users --> Add user
-- Fill in 'User name', check 'Programmatic access' box
-- Set permissions, choose 'Attach existing policies directly'
-- Choose AmazonS3FullAccess --> no need to Add Tags --> Create User
-- Check/download csv for Access Key ID & Secret Access Key
-- Open Environment Variables from cmd</br>
+* If you don't have existing IAM, search IAM --> Users --> Add user
+* Fill in 'User name', check 'Programmatic access' box
+* Set permissions, choose 'Attach existing policies directly'
+* Choose AmazonS3FullAccess --> no need to Add Tags --> Create User
+* Check/download csv for Access Key ID & Secret Access Key
+* Open Environment Variables from cmd</br>
 
     rundll32.exe sysdm.cpl,EditEnvironmentVariables
 
-- Click 'New', make 3 new variables below:
-</br>
+* Click 'New', make 3 new variables below:
 
     Variable Name = AWS_ACCESS_KEY_ID
     Value = (copy from Access Key ID)
@@ -43,8 +42,7 @@ AWS S3
     Variable Name = AWS_STORAGE_BUCKET_NAME
     Value = (fill in bucket name, i.e django-shop-bagus)
 
-- Install boto3 and django-storages
-</br>
+* Install boto3 and django-storages
 
     pip install boto3
     pip install django-storages
@@ -59,4 +57,4 @@ AWS S3
 
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-- Add initial object by dragging subdirectories and files from 'media' directory (don't drag 'media' directory directly)
+* Add initial object by dragging subdirectories and files from 'media' directory (don't drag 'media' directory directly)
