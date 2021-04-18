@@ -95,7 +95,7 @@ git add .
 git commit -am 'update'
 git push heroku master
 
-* Create proclife file (no extention). Put this text inside
+* Create procfile file (no extention). Put this text inside
 web: gunicorn myshop.wsgi --log-file -
 
 * Edit settings.py
