@@ -4,6 +4,7 @@ AWS S3
 - Create Bucket (ignore all of the options)
 - Permission --> CORS --> edit and paste JSON code below
 
+
     [
     {
         "AllowedHeaders": [
@@ -20,6 +21,7 @@ AWS S3
         "ExposeHeaders": []
     }
     ]
+
 
 - If you don't have existing IAM, search IAM --> Users --> Add user
 - Fill in 'User name', check 'Programmatic access' box
