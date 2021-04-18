@@ -29,10 +29,12 @@ AWS S3
 - Choose AmazonS3FullAccess --> no need to Add Tags --> Create User
 - Check/download csv for Access Key ID & Secret Access Key
 - Open Environment Variables from cmd
+</br>
 
     rundll32.exe sysdm.cpl,EditEnvironmentVariables
 
 - Click 'New', make 3 new variables below:
+</br>
 
     Variable Name = AWS_ACCESS_KEY_ID
     Value = (copy from Access Key ID)
@@ -44,6 +46,7 @@ AWS S3
     Value = (fill in bucket name, i.e django-shop-bagus)
 
 - Install boto3 and django-storages
+</br>
 
     pip install boto3
     pip install django-storages
