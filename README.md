@@ -1,4 +1,4 @@
-AWS S3
+**AWS S3**
 * AWS Management Console
 * Search: Storage S3
 * Create Bucket (ignore all of the options)
@@ -67,3 +67,23 @@ AWS S3
 ```
 
 * Add initial object by dragging subdirectories and files from 'media' directory (don't drag 'media' directory directly)
+
+**GIT PULL**
+```
+git init
+git remote add origin (repository link)
+git pull origin master
+```
+
+**HEROKU DEPLOYMENT**
+* Install HEROKU
+* Install gunicorn
+pip install gunicorn
+* Login to heroku using powershell or cmd
+heroku login -i
+* Freeze requirements
+pip freeze > requirements.txt
+* Create heroku app
+heroku create bagusdjangoshop
+* Open https://bagusshop.herokuapp.com/ in your browser
+* Push local repo to heroku
