@@ -5,20 +5,20 @@ AWS S3
 * Permission --> CORS --> edit and paste JSON code below
 ```
   [
-  {
-      "AllowedHeaders": [
-          "*"
-      ],
-      "AllowedMethods": [
-          "GET",
-          "POST",
-          "PUT"
-      ],
-      "AllowedOrigins": [
-          "*"
-      ],
-      "ExposeHeaders": []
-  }
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "POST",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
   ]
 ```
 
