@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY') #'4ad8ec05e5ba4504dff5bd0d03d342a7e597788485bd6cb5'
+SECRET_KEY = os.environ.get('SECRET_KEY', '4ad8ec05e5ba4504dff5bd0d03d342a7e597788485bd6cb5')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://bagusshop.herokuapp.com/']
+ALLOWED_HOSTS = ['https://bagusshop.herokuapp.com/', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
+    'cart.apps.CartConfig',
     'storages',
 ]
 
@@ -102,6 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+# Session for cart
+CART_SESSION_ID = 'cart'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
