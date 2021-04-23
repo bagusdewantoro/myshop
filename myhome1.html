@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+      body, h1, h2 {
+        font-family: Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      /* header =============================================== */
+      header {
+        background-color: lightgrey;
+        color: black;
+        text-align: center;
+        padding: 30px;
+      }
+
+      header a {
+        color: black;
+        height: 50px;
+        border-top: 2px solid lightgrey;
+        border-bottom: 2px solid lightgrey;
+      }
+
+      header a:hover {
+        color: #7a7a7a;
+      }
+
+      header a:active {
+        color: black;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+      }
+
+      /* nav main menu =============================================== */
+      .menu {
+        background-color: black;
+        overflow: hidden;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        padding: 0px 10px;
+      }
+
+      .menu a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 5px 10px;
+      }
+
+      .menu a.right {
+        float: right;
+      }
+
+      .menu a:hover {
+        background-color: lightgrey;
+        color: black
+      }
+
+      .menu a:active {
+        background-color: white;
+      }
+
+      /* main content =============================================== */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .side {
+        flex: 10%;
+        border-right: 1px solid lightgrey;
+        padding: 10px 0 0 10px;
+      }
+
+      .side a {
+        width: 100%;
+        padding: 10px 10px;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        display: block;
+        float: none;
+        color: black;
+      }
+
+      .side a:hover {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+
+      }
+
+      .side a:active {
+        background-color: lightgrey;
+      }
+
+      article {
+        flex: 70%;
+        padding: 20px 0 0 20px;
+      }
+
+      /* footer =============================================== */
+      footer {
+        padding: 5px 10px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        bottom: 0;
+      }
+
+      footer > * {
+        margin: 0;
+      }
+
+      /* responsive =============================================== */
+      @media screen and (max-width: 720px) {
+        .row {
+          flex-direction: column;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .menu a {
+          float: none;
+          width: 100%;
+        }
+        .side a {
+          float: none;
+          width: 100%;
+
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="#">Test Header</a></h1>
+    </header>
+
+    <nav class="menu">
+      <a href="#">Collections</a>
+      <a href="#">Awareness</a>
+      <a href="#">Contact</a>
+      <a href="#" class="right">Cart</a>
+      <a href="#" class="right">Search</a>
+    </nav>
+
+    <main class="row">
+      <nav class="side">
+        <a href="#">All</a>
+        <a href="#">Tee</a>
+        <a href="#">Long Sleeve</a>
+      </nav>
+
+      <article class="content">
+        <h2 class="category">All</h2>
+
+        <div class="content">
+          <figure class="media">
+            <img src="./lebar.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./tinggi.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./lebar.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./tinggi.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./lebar.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./tinggi.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./lebar.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./tinggi.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+          <figure class="media">
+            <img src="./lebar.jpg">
+            <p>Product Name</p>
+            <p>Rp 100K</p>
+          </figure>
+
+        </div>
+      </article>
+    </main>
+
+    <footer class="info">
+      <p>Contact</p>
+    </footer>
+
+  </body>
+</html>
