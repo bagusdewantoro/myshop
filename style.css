@@ -10,7 +10,7 @@ li {
   list-style-type: none;
 }
 body {
-  min-width: 100vh;
+  min-width: 100%;
 }
 
 /* font size =============================================== */
@@ -29,6 +29,7 @@ p {
 
 @media screen and (max-width: 840px) {}
 @media screen and (max-width: 480px) {
+  /*
   h1 {
     font-size: 3rem;
   }
@@ -41,6 +42,7 @@ p {
   a {
     font-size: 1.5rem;
   }
+  */
 }
 
 /* header =============================================== */
@@ -77,6 +79,7 @@ p {
   z-index: 1;
 }
   .menu a {
+    box-sizing: border-box;
     float: left;
     display: block;
     color: white;
@@ -106,6 +109,7 @@ p {
 .row {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 840px) {}
@@ -124,6 +128,7 @@ p {
 }
   .side a {
     width: 100%;
+    box-sizing: border-box;
     padding: 5px 10px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
@@ -242,12 +247,12 @@ p {
           flex: 75%;
         }
           .page .content .media {
-            width: 200px;
-            height: 240px;
+            width: 160px;
+            height: 200px;
             margin: 20px;
           }
-            .page .content .media img {
-              height: 200px;
+            .page .content .media a img {
+              height: 160px;
             }
             .page .detail .desc {
               min-width: 400px;
@@ -258,24 +263,47 @@ p {
       @media screen and (max-width: 480px) {
         .page {
           min-height: 20vh;
+          padding: 0;
         }
+          .page .category {
+            text-align: center;
+          }
+          .page .content {
+            justify-content: center;
+          }
           .page .content .media {
-            width: 250px;
-            height: 320px;
+            width: 150px;
+            height: 210px;
             margin: 10px;
           }
-            .page .content .media img {
-              height: 250px;
+            .page .content .media a img {
+              height: 160px;
             }
-          .page .detail .product, {
-            flex: 100%;
-          }
             .page .detail .product a img {
-              min-width: 400px;
-              display: block;
-              max-height: none;
+              max-width: 320px;
+              margin: 0 10px;
+              box-sizing: border-box;
             }
-        }
+
+          .page .detail .desc {
+            min-width: inherit;
+            max-width: 270px;
+            max-height: 500px;
+            margin-left: 10px;
+          }
+            .page .detail .desc h2,
+            .page .detail .desc h3,
+            .page .detail .desc p {
+              max-width: inherit;
+              margin-bottom: 5px;
+              display: block;
+              font-weight: normal;
+            }
+
+}
+
+
+
 
 /* footer =============================================== */
 .info {
