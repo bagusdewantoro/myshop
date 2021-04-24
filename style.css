@@ -73,7 +73,7 @@ a {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  padding: 0px 10px;
+  padding: 0;
   z-index: 1;
 }
   .menu a {
@@ -213,12 +213,12 @@ a {
           min-height: 20vh;
         }
           .page .content .media {
-            width: 280px;
-            height: 350px;
+            width: 250px;
+            height: 320px;
             margin: 10px;
           }
           .page .content .media img {
-            height: 280px;
+            height: 250px;
           }
       }
 
