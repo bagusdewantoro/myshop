@@ -2,35 +2,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>HOPE | {% block title %}{% endblock %}</title>
     <meta charset="utf-8">
-    <title>{% block title %}HOPE{% endblock %}</title>
-    <link href="{% static "css/base.css" %}" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"
-      crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet href="{% static 'css/style.css' %}">
   </head>
 
   <body>
-    <div id="header">
-      <a href="/" class="logo">HOPE</a>
-    </div>
-    <div id="subheader">
-      <div class="cart">
-        {% with total_items=cart|length %}
-          {% if total_items > 0 %}
-            Your_cart:
-            <a href="{% url "cart:cart_detail" %}">
-              {{ total_items }} item{{ total_items|pluralize }},
-              Rp {{ cart.get_total_price }}
-            </a>
-          {% else %}
-            Your cart is empty
-          {% endif %}
-        {% endwith %}
-      </div>
-    </div>
-    <div id="content">
+    <header class="logo">
+      <h1><a href="#">HOPE</a></h1>
+    </header>
+
+    <nav class="menu">
+      <a href="#">Collections</a>
+      <a href="#">Awareness</a>
+      <a href="#">Contact</a>
+      {% with total_items=cart|length %}
+        {% if total_items > 0 %}
+          Your_cart:
+          <a class="right" href="{% url "cart:cart_detail" %}">
+            {{ total_items }} item{{ total_items|pluralize }},
+            Rp {{ cart.get_total_price }}
+          </a>
+        {% else %}
+          Your cart is empty
+        {% endif %}
+      {% endwith %}
+    </nav>
+
+    <main class="row">
       {% block content %}
       {% endblock %}
-    </div>
+    </main>
+
+    <footer class="info">
+      <p>Contact</p>
+    </footer>
+
   </body>
 </html>
