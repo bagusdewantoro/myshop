@@ -2,40 +2,41 @@
 {% load static %}
 
 {% block title %}
-  Hope | {{ product.name }}
+  {{ product.name }}
 {% endblock %}
 
 {% block content %}
-  <div class="product-detail">
-    <img src="{% if product.image %}{{ product.image.url }}
-              {% else %}{% static "img/default.jpg" %}{% endif %}">
-    <h1>{{ product.name }}</h1>
-    <h2>
-      <a href="{{ product.category.get_absolute_url }}">
-        {{ product.category }}
-      </a>
-    </h2>
-    <p class="price">Rp {{ product.price }}</p>
-    <form action="{% url "cart:cart_add" product.id %}" method="post">
-      {{ cart_product_form }}
-      {% csrf_token %}
-      <input type="submit" value="Add to cart">
-    </form>
-    {{ product.description|linebreaks }}
-  </div>
+  <nav class="side">
+    <a href="{% url "shop:product_list" %}">All</a>
+    {% for c in categories %}
+      <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+    {% endfor %}
+  </nav>
 
   <article class="page">
     <section class="detail">
       <section class="product">
-        <a href="./tinggi.jpg"><img src="./tinggi.jpg"></a>
+        <a>
+          <img src="{% if product.image %}{{ product.image.url }}
+                    {% else %}{% static "img/default.jpg" %}
+                    {% endif %}">
+        </a>
       </section>
+
       <section class="desc">
-        <h2>Product 1</h2>
-        <h3><a href="#">Tee</a></h4>
-        <p>Quantity</p>
-        <p>Description Content Content Content Content Content Content
-         Content Content Content Content Content Content Content
-         Content Content Content Content Content Content Content</p>
+        <h2>{{ product.name }}</h2>
+        <h3>
+          <a href="{{ product.category.get_absolute_url }}">
+            {{ product.category }}
+          </a>
+        </h3>
+        <form action="{% url "cart:cart_add" product.id %}" method="post">
+          {{ cart_product_form }}
+          {% csrf_token %}
+          <input type="submit" value="Add to cart">
+        </form>
+        <p><strong>{{ product.price }}K</strong></p>
+        <p>{{ product.description|linebreaks }}</p>
       </section>
     </section>
   </article>

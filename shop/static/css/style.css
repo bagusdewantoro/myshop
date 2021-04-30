@@ -23,7 +23,8 @@ h3 {
 }
 ul,
 li,
-p {
+p,
+table {
   font-size: 1rem;
 }
 
@@ -226,7 +227,7 @@ p {
       .page .detail .desc h2,
       .page .detail .desc h3,
       .page .detail .desc p {
-        margin-bottom: 5px;
+        margin: 5px 0;
         display: block;
         font-weight: normal;
       }
@@ -303,8 +304,6 @@ p {
 }
 
 
-
-
 /* footer =============================================== */
 .info {
   margin-top: 20px;
@@ -321,3 +320,68 @@ p {
 /* media =============================================== */
 @media screen and (max-width: 840px) {}
 @media screen and (max-width: 480px) {}
+
+
+/* cart =============================================== */
+table {
+  width: 600px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-weight: bold;
+}
+  table th,
+  table td {
+    text-align: left;
+    margin: 0;
+    height: 30px;
+  }
+  tbody tr:nth-child(even) {
+    background: #efefef;
+  }
+  thead th,
+  tbody tr.total {
+    background: lightgrey;
+  }
+table.cart {
+  margin-bottom: 20px;
+}
+  table.cart img {
+    width: 180px;
+  }
+.cart p a {
+  color: black;
+}
+
+@media screen and (max-width: 480px) {
+  table {
+    width: 100%;
+  }
+    table.cart img {
+      width: 120px;
+    }
+}
+
+/* order =============================================== */
+.order-form {
+    float:left;
+}
+.order-info {
+    float:right;
+    width:300px;
+    background:#efefef;
+    padding:10px 20px;
+    border-bottom:1px solid black;
+}
+  .order-info ul li {
+      margin:0;
+      padding:0;
+      font-size:14px;
+  }
+  .order-info p {
+      font-weight:bold;
+      float:right;
+  }
+  .order-info span {
+      float:right;
+  }

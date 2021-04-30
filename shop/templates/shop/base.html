@@ -10,24 +10,25 @@
 
   <body>
     <header class="logo">
-      <h1><a href="{% static %}">HOPE</a></h1>
+      <h1><a href="{% url "shop:product_list" %}">HOPE</a></h1>
     </header>
 
     <nav class="menu">
-      <a href="#">Collections</a>
+      <a href="{% url "shop:product_list" %}">Collections</a>
       <a href="#">Awareness</a>
-      <a href="#">Contact</a>
+      <a href="#info">Contact</a>
+      <a class="right" href="{% url "cart:cart_detail" %}">
       {% with total_items=cart|length %}
         {% if total_items > 0 %}
-          Your_cart:
-          <a class="right" href="{% url "cart:cart_detail" %}">
+          Your cart:
             {{ total_items }} item{{ total_items|pluralize }},
-            Rp {{ cart.get_total_price }}
-          </a>
+            {{ cart.get_total_price }}K
+
         {% else %}
           Your cart is empty
         {% endif %}
       {% endwith %}
+        </a>
     </nav>
 
     <main class="row">
@@ -35,7 +36,7 @@
       {% endblock %}
     </main>
 
-    <footer class="info">
+    <footer id="info" class="info">
       <p>Contact</p>
     </footer>
 
